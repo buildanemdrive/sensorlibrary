@@ -1,0 +1,7 @@
+cmake_minimum_required (VERSION 3.0)
+project (sensorlibrary)
+set (BEM_VERSION_MAJOR 1)
+set (BEM_VERSION_MINOR 0)
+subdirs(include src test)
+enable_testing()
+add_test(test_sensor ${EXECUTABLE_OUTPUT_PATH}/test/test_sensor)

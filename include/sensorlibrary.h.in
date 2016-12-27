@@ -1,0 +1,22 @@
+#ifndef BEM_SENSOR_LIBRARY
+#define BEM_SENSOR_LIBRARY
+#define BEM_VERSION_MAJOR	@BEM_VERSION_MAJOR@
+#define BEM_VERSION_MINOR	@BEM_VERSION_MINOR@
+
+#define GPIO_BASE	0x20200000
+#define GPIO_LEN	0xB4
+
+#include <sys/time.h>
+#include <sys/mman.h>
+#include <unistd.h>
+//#include <sys/types.h>
+//#include <sys/stat.h>
+#include <fcntl.h>
+
+struct bem_reading_t {
+	int	reading;
+	timeval	time;
+};
+
+int bem_get_sample(bem_reading_t *sample, int sample_length);
+#endif
